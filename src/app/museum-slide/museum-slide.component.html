@@ -1,3 +1,7 @@
-<p>
-  museum-slide works!
-</p>
+<ul>
+    <li
+    *ngFor="let person of PersonDirectory; let i=index">
+     <app-slide-presentation
+     [PersonInputStream]="person"></app-slide-presentation>
+   </li>
+</ul>

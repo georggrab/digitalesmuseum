@@ -5,11 +5,15 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MuseumSlideComponent } from './museum-slide/museum-slide.component';
+import { SlidePresentationComponent } from './slide-presentation/slide-presentation.component';
+import { TrustPipe } from './trust.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     MuseumSlideComponent,
+    SlidePresentationComponent,
+    TrustPipe,
   ],
   imports: [
     BrowserModule,
