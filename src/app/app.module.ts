@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { MuseumSlideComponent } from './museum-slide/museum-slide.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MuseumSlideComponent,
   ],
   imports: [
     BrowserModule,

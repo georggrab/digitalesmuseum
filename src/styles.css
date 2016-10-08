@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  background: #171a1d url(/assets/bgframes.png) repeat 50% 50%;
+  color:white;
+	-webkit-animation: scr 50s linear infinite;
+	animation: scr 50s linear infinite;
+}
+
+@-webkit-keyframes scr {
+	from { background-position: 50% 0; }
+	to { background-position:  50% -100%; }
+}
+@keyframes scr {
+	from { background-position: 50% 0; }
+	to { background-position:  50% -100%; }
+}
+html {
+  background: initial;
+}
+
+@font-face {
+  font-family: 'Monoton';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Monoton'), local('Monoton-Regular'), url(http://themes.googleusercontent.com/static/fonts/monoton/v4/AKI-lyzyNHXByGHeOcds_w.woff) format('woff');
+}
