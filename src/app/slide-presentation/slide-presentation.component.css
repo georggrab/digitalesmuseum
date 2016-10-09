@@ -17,9 +17,7 @@ main {
   display:flex;
   flex-direction:column;
   flex-wrap:wrap;
-
-  /*Think of this flex hack when debugging my friend its 2am*/
-  width:0px;
+  align-content:flex-start;
 }
 
 .slide--float{
@@ -36,7 +34,8 @@ main {
   cursor: pointer;
 }
 
-.slide--additional{
+.slide--datatile{
+  width:300px;
 }
 
 .slide--chips:active{ background-color: initial; }
