@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MuseumSlideComponent } from './museum-slide/museum-slide.component';
 import { SlidePresentationComponent } from './slide-presentation/slide-presentation.component';
 import { TrustPipe } from './trust.pipe';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { TrustPipe } from './trust.pipe';
     MuseumSlideComponent,
     SlidePresentationComponent,
     TrustPipe,
+    GameComponent,
   ],
   imports: [
     BrowserModule,
