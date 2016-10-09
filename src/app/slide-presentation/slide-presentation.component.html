@@ -22,7 +22,7 @@
         <!--<span *ngFor="let slide of PersonInputStream.slides;"
           [ngSwitch]="slide.type">-->
 
-            <div *ngIf="slide.type=='DataTile'" class="mdl-card slide--additional mdl-shadow--2dp">
+            <div *ngIf="slide.type=='DataTile'" class="mdl-card slide--datatile mdl-shadow--2dp">
               <div class="mdl-card__title mdl-card--expand">
                 {{slide.payload}}
               </div>
