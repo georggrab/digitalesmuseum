@@ -11,8 +11,19 @@ section h2 {
     margin:0;
 }
 
-.slide--portrait{
-  margin-top: 25px;
+main {
+  height: 600px;
+  margin-top:25px;
+  display:flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+
+  /*Think of this flex hack when debugging my friend its 2am*/
+  width:0px;
+}
+
+.slide--float{
+  float:left;
 }
 
 .slide--chips{
@@ -24,6 +35,11 @@ section h2 {
   transition:opacity .5s ease-in-out;
   cursor: pointer;
 }
+
+.slide--additional{
+}
+
+.slide--chips:active{ background-color: initial; }
 
 .slide--chips:hover{
   opacity:1;

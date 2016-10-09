@@ -21,7 +21,9 @@ export class MuseumSlideComponent implements OnInit {
       ],
       slides: [
           {type: "DataTile", payload: "Born on the moon"},
-          {type: "ImageTile", caption: "Bomba", src: "http://placehold.it/300x300"}
+          {type: "ImageTile", caption: "Bomba", src: {url: "url(http://placehold.it/300x200)", height: "200px", width: "300px"}},
+          {type: "ImageTile", caption: "Bomba", src: {url: "url(http://placehold.it/300x200)", height: "200px", width: "300px"}},
+          {type: "ImageTile", caption: "Bomba", src: {url: "url(http://placehold.it/300x200)", height: "200px", width: "300px"}},
       ]},
       {vorname: "Ada", nachname: "Lovelace"},
       {vorname: "Gabe", nachname: "Newell"},

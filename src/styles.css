@@ -1,9 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-body{
+html body{
   background: #171a1d url(/assets/bgframes.png) repeat 50% 50%;
   color:white;
 	-webkit-animation: scr 50s linear infinite;
 	animation: scr 50s linear infinite;
+}
+
+::-webkit-scrollbar {
+    /*display: none;*/
 }
 
 @-webkit-keyframes scr {
