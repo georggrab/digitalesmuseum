@@ -14,13 +14,13 @@ export class Camera {
     this.spacing = this.width / resolution;
     this.focalLength = focalLength || 0.8;
     this.range = 14; //todo mobile
-    this.lightRange = 5;
+    this.lightRange = 10;
     this.scale = (this.width + this.height) / 1200;
   }
 
-  render(player, map){
+  render(player, map, gameData){
     this.drawSky(player.direction, map.skybox, map.light);
-    this.drawColumns(player, map);
+    this.drawColumns(player, map, gameData);
     this.drawWeapon(player.weapon, player.paces);
   }
 
@@ -48,17 +48,18 @@ export class Camera {
     this.ctx.restore();
   }
 
-  drawColumns(player, map){
+  drawColumns(player, map, gameData){
     this.ctx.save();
     for (let column = 0; column < this.resolution; column++){
       let x = column / this.resolution - 0.5;
       let angle = Math.atan2(x, this.focalLength);
       let ray = map.cast(player, player.direction + angle, this.range);
-      this.drawColumn(column,ray,angle,map);
+      this.drawColumn(column,ray,angle,map, gameData);
     }
     this.ctx.restore();
   }
-  drawColumn(column, ray, angle, map){
+  private gameDataIdx = 0;
+  drawColumn(column, ray, angle, map, gameData){
     let ctx = this.ctx;
     let texture = map.wallTexture;
     let left = Math.floor(column * this.spacing);
@@ -67,10 +68,11 @@ export class Camera {
 
     while (++hit < ray.length && ray[hit].height <= 0);
 
+
     for ( let s = ray.length -1; s >= 0; s--){
       let step = ray[s];
-      let rainDrops = Math.pow(Math.random(), 3) * s;
-      let rain = (rainDrops > 0) && this.project(0.1, angle, step.distance);
+      /*let rainDrops = Math.pow(Math.random(), 3) * s;
+      let rain = (rainDrops > 0) && this.project(0.1, angle, step.distance);*/
 
       if (s === hit){
         let textureX = Math.floor(texture.width * step.offset);
@@ -78,6 +80,21 @@ export class Camera {
 
         ctx.globalAlpha = 1;
         ctx.drawImage(texture.image, textureX, 0, 1, texture.height, left, wall.top, width, wall.height);
+        if (this.gameDataIdx < gameData.length){
+          ctx.drawImage(map.frameTexture.image, textureX, 0, 1, texture.height, left, wall.top,width, wall.height);
+
+          let X = gameData[this.gameDataIdx].bitmap;
+          let XPWdt = parseInt(X.width)
+           ,  XPHgt = parseInt(X.height);
+          let XRegionPicture = Math.floor(XPWdt * step.offset)
+          ctx.drawImage(gameData[this.gameDataIdx].bitmap.image, XRegionPicture, 0,
+            XPWdt - XRegionPicture,
+            XPHgt, left, wall.top,width, wall.height);
+          this.gameDataIdx++;
+          if (this.gameDataIdx == gameData.length){
+            this.gameDataIdx = 0;
+          }
+        }
         ctx.fillStyle = '#000000';
         ctx.globalAlpha = Math.max((step.distance + step.shading) / this.lightRange - map.light, 0);
         ctx.fillRect(left, wall.top, width, wall.height);

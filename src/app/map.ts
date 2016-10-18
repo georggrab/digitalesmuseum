@@ -4,12 +4,18 @@ export class Map {
   public wallGrid: Uint8Array;
   public skybox: Bitmap;
   public wallTexture: Bitmap;
+  public frameTexture: Bitmap;
   public light: number = 0;
+
+
+  // debug var!
+  public ray: any;
 
   constructor(private size: number){
     this.wallGrid = new Uint8Array(this.size * this.size);
     this.skybox = new Bitmap('assets/deathvalley_panorama.jpg', 2000, 750);
-    this.wallTexture = new Bitmap('assets/wall_texture.jpg', 1024, 1024);
+    this.wallTexture = new Bitmap('assets/wall_texture2.jpg', 900, 900);
+    this.frameTexture = new Bitmap('assets/frame.png', 450, 450);
   }
 
   get(x:number, y:number){
@@ -28,6 +34,10 @@ export class Map {
     for (let i = 0; i < this.size * this.size; i++){
       if (i % this.size == i) this.wallGrid[i] = 1;
       if (i % this.size === 0) this.wallGrid[i] = 1;
+      if (i % this.size === 0 && i - 1 !== -1) this.wallGrid[i - 1] = 1;
+    }
+    for (let i = (this.size * this.size) - this.size; i < this.size * this.size; i++){
+      this.wallGrid[i] = 1;
     }
   }
 
@@ -68,13 +78,14 @@ export class Map {
       if (nextStep.distance > range) return [origin];
       return [origin].concat(ray(nextStep));
     }
+    this.ray = ray({x: point.x, y: point.y, height: 0, distance: 0});
     return ray({x: point.x, y: point.y, height: 0, distance: 0});
 
 
   }
 
   update(seconds: number){
-    if (this.light > 0) this.light = Math.max(this.light - 10 * seconds, 0);
-    else if (Math.random() * 5 < seconds) this.light = 2;
+    //if (this.light > 0) this.light = Math.max(this.light - 10 * seconds, 0);
+    //else if (Math.random() * 5 < seconds) this.light = 2;
   }
 }
