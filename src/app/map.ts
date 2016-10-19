@@ -1,7 +1,7 @@
 import { Bitmap } from './bitmap';
 
 export class Map {
-  public wallGrid: Uint8Array;
+  public wallGrid;
   public skybox: Bitmap;
   public wallTexture: Bitmap;
   public frameTexture: Bitmap;
@@ -12,7 +12,11 @@ export class Map {
   public ray: any;
 
   constructor(private size: number){
-    this.wallGrid = new Uint8Array(this.size * this.size);
+    this.wallGrid = new Array(this.size * this.size);
+    for (let i = 0; i < this.size * this.size; i++){
+      this.wallGrid[i] = {h: 0, idx: -1};
+    }
+
     this.skybox = new Bitmap('assets/deathvalley_panorama.jpg', 2000, 750);
     this.wallTexture = new Bitmap('assets/wall_texture2.jpg', 900, 900);
     this.frameTexture = new Bitmap('assets/frame.png', 450, 450);
@@ -32,13 +36,14 @@ export class Map {
   }
   createRoom(){
     for (let i = 0; i < this.size * this.size; i++){
-      if (i % this.size == i) this.wallGrid[i] = 1;
-      if (i % this.size === 0) this.wallGrid[i] = 1;
-      if (i % this.size === 0 && i - 1 !== -1) this.wallGrid[i - 1] = 1;
+      if (i % this.size == i) this.wallGrid[i] = {h : 1, idx : 1};
+      if (i % this.size === 0) this.wallGrid[i] ={h : 1, idx : 1};
+      if (i % this.size === 0 && i - 1 !== -1) this.wallGrid[i - 1] = {h : 1, idx : 1};
     }
     for (let i = (this.size * this.size) - this.size; i < this.size * this.size; i++){
-      this.wallGrid[i] = 1;
+      this.wallGrid[i] = {h : 1, idx : 1};
     }
+    this.wallGrid[3] = {h:2,idx:1};
   }
 
   cast(point, angle, range){
@@ -61,7 +66,7 @@ export class Map {
     let inspect = function(step, shiftX, shiftY, distance, offset):any {
         var dx = cos < 0 ? shiftX : 0;
         var dy = sin < 0 ? shiftY : 0;
-        step.height = self.get(step.x - dx, step.y - dy);
+        step.height = self.get(step.x - dx, step.y - dy).h;
         step.distance = distance + Math.sqrt(step.length2);
         if (shiftX) step.shading = cos < 0 ? 2 : 0;
         else step.shading = sin < 0 ? 2 : 1;

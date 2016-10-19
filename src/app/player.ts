@@ -16,8 +16,8 @@ export class Player {
   walk(distance: number, map: Map){
     let dx = Math.cos(this.direction) * distance;
     let dy = Math.sin(this.direction) * distance;
-    if (map.get(this.x + dx, this.y) <= 0) this.x += dx;
-    if (map.get(this.x, this.y + dy) <= 0) this.y += dy;
+    if (map.get(this.x + dx, this.y).h <= 0) this.x += dx;
+    if (map.get(this.x, this.y + dy).h <= 0) this.y += dy;
     this.paces += distance;
   }
 

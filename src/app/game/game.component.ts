@@ -32,7 +32,7 @@ export class GameComponent implements OnInit {
       slides: [
           {type: "DataTile", payload: "Born on the moon"},
           {type: "ImageTile", caption: "Bomba", src: {url: "http://a2.files.biography.com/image/upload/c_fill,cs_srgb,dpr_1.0,g_face,h_300,q_80,w_300/MTE5NDg0MDU1MTUzMTE2Njg3.jpg", height: "300px", width: "300px"}},
-          /*{type: "ImageTile", caption: "Bomba", src: {url: "http://placehold.it/300x200", height: "200px", width: "300px"}},
+          {type: "ImageTile", caption: "Bomba", src: {url: "http://placehold.it/300x200", height: "200px", width: "300px"}},/*
           {type: "ImageTile", caption: "Bomba", src: {url: "http://placehold.it/300x200", height: "200px", width: "300px"}},
           {type: "ImageTile", caption: "Bomba", src: {url: "http://placehold.it/300x200", height: "200px", width: "300px"}},
           {type: "ImageTile", caption: "Bomba", src: {url: "http://placehold.it/300x200", height: "200px", width: "300px"}},
@@ -84,7 +84,8 @@ export class GameComponent implements OnInit {
   ngAfterViewInit() {
       this.canvas = document.getElementById('display');
       this.player = new Player(3, 3, Math.PI * 0.3);
-      this.camera = new Camera(this.canvas, GameComponent.MOBILE? 160:320, 0.8);
+      this.camera = new Camera(this.canvas, 320, 0.8);
+      //this.camera = new Camera(this.canvas, GameComponent.MOBILE? 160:320, 0.8);
       this.map = new Map(8);
       this.map.createRoom();
       this.gameloop = new GameLoop();
