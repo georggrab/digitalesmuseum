@@ -80,7 +80,6 @@ export class Camera {
       this.cls++;
 
       if (s === hit){
-        //let textureX = Math.floor(texture.width * step.offset);
         let wall = this.project(step.height, angle, step.distance);
 
         let targetIdx = map.get(step.x, step.y).idx;
