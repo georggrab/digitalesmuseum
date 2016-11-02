@@ -8,6 +8,11 @@ import { TrustPipe } from '../trust.pipe';
 })
 export class SlidePresentationComponent implements OnInit {
   @Input() PersonInputStream: any;
+  GameStarted : boolean = false;
+
+  toggleGameStart() {
+    this.GameStarted = !this.GameStarted;
+  }
 
   constructor() {
   }

@@ -18,10 +18,25 @@ main {
   flex-direction:column;
   flex-wrap:wrap;
   align-content:flex-start;
+  position: relative;
 }
 
 .slide--float{
   float:left;
+}
+
+.slide--portrait{
+  transition: opacity 0.5s;
+  background-color:black;
+  opactiy:1;
+}
+.slide--portrait:hover{
+  opacity:0.2;
+  cursor:pointer;
+}
+
+.slide--portrait:hover + .portrait--gameoverlay {
+  opacity:1;
 }
 
 .slide--chips{
@@ -42,4 +57,29 @@ main {
 
 .slide--chips:hover{
   opacity:1;
+}
+
+.portrait--gameoverlay{
+  position:absolute;
+  top:0;
+  width:600px;
+  height:600px;
+  opacity:0;
+}
+.portrait--gameoverlay i {
+    width: 200px;
+    height: 200px;
+    font-size: 200px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.portrait--gameoverlay .icon--caption{
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+    font-family: 'Cutive Mono', monospace;
 }

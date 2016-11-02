@@ -9,15 +9,20 @@
     </span>
   </template>
   <main>
-    <div *ngIf="PersonInputStream.portrait" [style.background-image]="PersonInputStream.portrait.url | trust"
+    <div (click)="toggleGameStart()" *ngIf="PersonInputStream.portrait" [style.background-image]="PersonInputStream.portrait.url | trust"
       [style.width]="PersonInputStream.portrait.width"
       [style.height]="PersonInputStream.portrait.height"
-      class="mdl-card mdl-shadow--2dp slide--float">
+      class="mdl-card mdl-shadow--2dp slide--float slide--portrait">
 
       <div class="mdl-card__title mdl-card--expand"></div>
       <div class="mdl-card__actions">
       </div>
     </div>
+    <div class="portrait--gameoverlay">
+      <i class="material-icons">landscape</i>
+      <i class="icon--caption">enter</i>
+    </div>
+    <app-game *ngIf="GameStarted === true"></app-game>
         <div *ngFor="let slide of PersonInputStream.slides;">
         <!--<span *ngFor="let slide of PersonInputStream.slides;"
           [ngSwitch]="slide.type">-->
