@@ -36,6 +36,9 @@ export class Map {
   }
   createRoom(){
     for (let i = 0; i < this.size * this.size; i++){
+      this.wallGrid[i] = {h : 0, idx : 0};
+    }
+    for (let i = 0; i < this.size * this.size; i++){
       if (i % this.size == i) this.wallGrid[i] = {h : 1, idx : 1};
       if (i % this.size === 0) this.wallGrid[i] ={h : 1, idx : 1};
       if (i % this.size === 0 && i - 1 !== -1) this.wallGrid[i - 1] = {h : 1, idx : 1};
@@ -44,6 +47,7 @@ export class Map {
       this.wallGrid[i] = {h : 1, idx : 1};
     }
     this.wallGrid[3] = {h:2,idx:1};
+    this.wallGrid[10] = {h:2,idx:0};
   }
 
   cast(point, angle, range){

@@ -80,7 +80,7 @@ export class Camera {
       this.cls++;
 
       if (s === hit){
-        let textureX = Math.floor(texture.width * step.offset);
+        //let textureX = Math.floor(texture.width * step.offset);
         let wall = this.project(step.height, angle, step.distance);
 
         let targetIdx = map.get(step.x, step.y).idx;
@@ -92,8 +92,9 @@ export class Camera {
         let X = gameData[targetIdx].bitmap;
         let XPWdt = parseInt(X.width)
          ,  XPHgt = parseInt(X.height);
+        let textureX = Math.floor(XPWdt * step.offset);
         let XRegionPicture = Math.floor(XPWdt * step.offset);
-        ctx.drawImage(gameData[targetIdx].bitmap.image, XRegionPicture, 0, 1,
+        ctx.drawImage(gameData[targetIdx].bitmap.image, textureX, 0, 1,
           XPHgt, left, wall.top,width, wall.height);
         }
           /*this.previousLValue = XRegionPicture;
