@@ -12,7 +12,7 @@ export class MuseumSlideComponent implements OnInit {
     this.PersonDirectory = [
       {vorname: "Alan", nachname: "Turing", caption: "First human on the moon",
       portrait: {
-        url : "url(http://a2.files.biography.com/image/upload/c_fill,cs_srgb,dpr_1.0,g_face,h_300,q_80,w_300/MTE5NDg0MDU1MTUzMTE2Njg3.jpg)",
+        url : "url(http://placehold.it/600x600)",
         width: "600px", height: "600px"
       },
       chips: [

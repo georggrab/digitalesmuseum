@@ -1,109 +1,85 @@
 section h1 {
-  font-family: 'Cutive Mono', monospace;
-  line-height: normal;
-  margin: 0;
+    font-family: 'Cutive Mono', monospace;
+    line-height: normal;
+    margin: 0;
 }
-
 section h2 {
-  font-family: 'Cutive Mono', monospace;
-  font-style: italic;
-  font-size: 1.5em;
-  line-height: normal;
-  margin: 0;
-}
-
-.person--portrait {
-position:relative;
-}
-
-.slide--portrait {
-  transition: opacity 0.5s;
-  background-color: black;
-  opactiy: 1;
+    font-family: 'Cutive Mono', monospace;
+    font-style:italic;
+    font-size: 1.5em;
+    line-height: normal;
+    margin:0;
 }
 
 main {
   height: 600px;
-  margin-top: 25px;
-  display: flex;
-  flex-wrap: wrap;
-  width: 1200px;
+  margin-top:25px;
+  display:flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+  align-content:flex-start;
+  position: relative;
 }
 
-header{
-
-    bottom: 0;
-    z-index: 3;
-
-    width: 550px;
-    background-color: black;
-    padding-left: 50px;
-    padding-bottom: 25px;
-
+.slide--float{
+  float:left;
 }
 
-.slide--portrait {
-background-size:cover;
+.slide--portrait{
+  transition: opacity 0.5s;
+  background-color:black;
+  opactiy:1;
+}
+.slide--portrait:hover{
+  opacity:0.2;
+  cursor:pointer;
 }
 
-.slide--portrait:hover {
-  opacity: 0.2;
-  cursor: pointer;
+.slide--portrait:hover + .portrait--gameoverlay {
+  opacity:1;
 }
 
-.slide--portrait:hover+.portrait--gameoverlay {
-  opacity: 1;
-}
-
-.slide--chips {
-  margin-top: 5px;
-  margin-right: 10px;
-  color: white;
+.slide--chips{
+  margin-top:5px;
+  margin-right:10px;
+  color:white;
   background-color: #1d0000;
-  opacity: 0.5;
-  transition: opacity .5s ease-in-out;
+  opacity:0.5;
+  transition:opacity .5s ease-in-out;
   cursor: pointer;
 }
 
-.slide--datatile {
-  width: 300px;
+.slide--datatile{
+  width:300px;
 }
 
-.slide--chips:active {
-  background-color: initial;
+.slide--chips:active{ background-color: initial; }
+
+.slide--chips:hover{
+  opacity:1;
 }
 
-.slide--chips:hover {
-  opacity: 1;
+.portrait--gameoverlay{
+  position:absolute;
+  top:0;
+  width:600px;
+  height:600px;
+  opacity:0;
 }
-
-.portrait--gameoverlay {
-  position: absolute;
-    top: 0;
-    width: 600px;
-    height: 600px;
-    opacity: 0;
-}
-
 .portrait--gameoverlay i {
-  width: 200px;
-  height: 200px;
-  font-size: 200px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
+    width: 200px;
+    height: 200px;
+    font-size: 200px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
 }
-
-.mdl-card {
-  flex: 1;
-}
-
-.portrait--gameoverlay .icon--caption {
-  width: 100%;
-  font-size: 25px;
-  text-align: center;
-  font-family: 'Cutive Mono', monospace;
+.portrait--gameoverlay .icon--caption{
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+    font-family: 'Cutive Mono', monospace;
 }
