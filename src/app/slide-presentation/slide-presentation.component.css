@@ -76,9 +76,6 @@ background-size:cover;
 .slide--chips:hover {
   opacity: 1;
 }
-<<<<<<< HEAD
-=======
-
 .portrait--gameoverlay {
   position: absolute;
     top: 0;
@@ -108,7 +105,4 @@ background-size:cover;
   font-size: 25px;
   text-align: center;
   font-family: 'Cutive Mono', monospace;
->>>>>>> parent of 460808e... Revert "Switched design to vertical"
 }
-=======
->>>>>>> 8699307684dbd7c1ffffb6c07fb3a8541c683972
