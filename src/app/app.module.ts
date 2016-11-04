@@ -10,6 +10,7 @@ import { TrustPipe } from './trust.pipe';
 import { GameComponent } from './game/game.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { BackendService } from './backend.service';
+import { ToUrlPipe } from './to-url.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BackendService } from './backend.service';
     SlidePresentationComponent,
     TrustPipe,
     GameComponent,
-    NavigationComponent
+    NavigationComponent,
+    ToUrlPipe
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TrustPipe } from '../trust.pipe';
+import { ToUrlPipe } from '../to-url.pipe';
 
 @Component({
   selector: 'app-slide-presentation',

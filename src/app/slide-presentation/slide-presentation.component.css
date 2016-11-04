@@ -20,6 +20,15 @@ position:relative;
   transition: opacity 0.5s;
   background-color: black;
   opactiy: 1;
+  min-width:600px;
+  min-height:600px;
+}
+
+.slide--imagetile{
+    min-width: 300px;
+    min-height: 300px;
+    background-size: cover;
+    background-position: center center;
 }
 
 main {
@@ -42,8 +51,39 @@ header{
 
 }
 
+.slide--bottom{
+    position: absolute;
+    bottom: -50px;
+    background-color: black;
+    color: white;
+    font-family: 'Cutive Mono', monospace;
+    transition: all 0.4s;
+    opacity:0.8;
+}
+.slide--imagetile:hover{
+}
+.slide--imagetile:hover .slide--bottom{
+  bottom:0;
+  opacity:1;
+}
+
 .slide--portrait {
 background-size:cover;
+display: inline-block;
+}
+.slide--portrait-text{
+    display:inline-block;
+    position:absolute;
+    width: 600px;
+    height: 600px;
+    background: black;
+    padding: 20px;
+    text-align: justify;
+    font-family: 'Cutive Mono', monospace;
+    overflow:auto;
+}
+.slide--portrait-text::-webkit-scrollbar {
+  display:none;
 }
 
 .slide--portrait:hover {
@@ -67,6 +107,12 @@ background-size:cover;
 
 .slide--datatile {
   width: 300px;
+    max-height: 300px;
+    max-width: 300px;
+    text-align: justify;
+font-family: 'Cutive Mono', monospace;
+background-color:black;
+color:white;
 }
 
 .slide--chips:active {
