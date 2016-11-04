@@ -37,7 +37,7 @@ export class BackendService {
   getPersons() : Observable<Array<Person>> {
       let endpoint = "person";
       return this.http.get(this.api + endpoint)
-        .map((res: Response) => res.json())
+        .map((res: Response) => res.json().persons)
         .catch((error:any) => Observable.throw(error.json().message || 'Server error'));
   }
 

@@ -9,6 +9,7 @@ import { SlidePresentationComponent } from './slide-presentation/slide-presentat
 import { TrustPipe } from './trust.pipe';
 import { GameComponent } from './game/game.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { BackendService } from './backend.service';
 
 @NgModule({
   declarations: [
@@ -17,14 +18,14 @@ import { NavigationComponent } from './navigation/navigation.component';
     SlidePresentationComponent,
     TrustPipe,
     GameComponent,
-    NavigationComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

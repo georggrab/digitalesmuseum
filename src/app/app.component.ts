@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { BackendService, Person } from './backend.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  public person: Array<Person> = [];
+  constructor(private backendService: BackendService){
+    backendService.getPersons().subscribe((data) => {
+      this.person = data;
+    }, (err)=>{},()=>{});
+  }
 }
