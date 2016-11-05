@@ -10,6 +10,22 @@
     </div>
     <div *ngIf="PersonInputStream.dataTiles && PersonInputStream.dataTiles.length > 0" class="mdl-card mdl-shadow--2dp slide--portrait-text">
       <span [innerHTML]="PersonInputStream.dataTiles[0].long_text"></span>
+      <span>
+      <table *ngIf="Sources" class="mdl-data-table mdl-js-data-table table--sources">
+        <thead>
+          <tr>
+            <th class="mdl-data-table__cell--non-numeric">Referenz</th>
+            <th class="mdl-data-table__cell--non-numeric">Quelle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of keys(); let i=index">
+            <td class="mdl-data-table__cell--non-numeric">{{data}}</td>
+            <td class="mdl-data-table__cell--non-numeric">{{Sources[data]}}</td>
+          </tr>
+        </tbody>
+      </table>
+      </span>
       <div class="mdl-card__title mdl-card--expand"></div>
       <div class="mdl-card__actions"></div>
     </div>

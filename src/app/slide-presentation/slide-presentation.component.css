@@ -12,6 +12,11 @@ section h2 {
   margin: 0;
 }
 
+.table--sources{
+  color:black;
+  white-space:initial;
+}
+
 .person--portrait {
 position:relative;
 }
