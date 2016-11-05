@@ -13,8 +13,12 @@ section h2 {
 }
 
 .table--sources{
+  margin-top:20px;
   color:black;
   white-space:initial;
+}
+.table--sources td{
+  text-align:justify;
 }
 
 .person--portrait {
@@ -37,7 +41,6 @@ position:relative;
 }
 
 main {
-  height: 600px;
   margin-top: 25px;
   display: flex;
   flex-wrap: wrap;

@@ -5,6 +5,9 @@ html body{
 	-webkit-animation: scr 50s linear infinite;
 	animation: scr 50s linear infinite;
 }
+h1,h2,h3,h4,h5,h6{
+font-family: 'Cutive Mono', monospace !important;
+}
 
 ::-webkit-scrollbar {
     /*display: none;*/
