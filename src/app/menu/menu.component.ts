@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, OnChanges, SimpleChange, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChange, EventEmitter, Output, ChangeDetectorRef } from '@angular/core';
 import { Person, Chip } from '../backend.service';
+import { SharedServiceService } from '../shared-service.service';
 
 @Component({
   selector: 'app-menu',
@@ -13,7 +14,12 @@ export class MenuComponent implements OnInit, OnChanges {
   public Chips = [];
   public FilteredChips = [];
   public visiblePersons = 0;
-  constructor() { }
+  constructor(private sharedService : SharedServiceService, private cdr: ChangeDetectorRef) {
+    sharedService.subject.subscribe(value => {
+      this.visiblePersons = value;
+      cdr.detectChanges();
+    });
+  }
 
   ngOnInit() {
   }

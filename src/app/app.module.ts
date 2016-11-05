@@ -10,6 +10,7 @@ import { TrustPipe } from './trust.pipe';
 import { GameComponent } from './game/game.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { BackendService } from './backend.service';
+import { SharedServiceService } from './shared-service.service';
 import { ToUrlPipe } from './to-url.pipe';
 import { MenuComponent } from './menu/menu.component';
 
@@ -29,7 +30,7 @@ import { MenuComponent } from './menu/menu.component';
     FormsModule,
     HttpModule
   ],
-  providers: [BackendService],
+  providers: [BackendService, SharedServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

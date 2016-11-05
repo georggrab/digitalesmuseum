@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { Person } from '../backend.service';
+import { SharedServiceService } from '../shared-service.service';
 
 @Component({
   selector: 'app-museum-slide',
@@ -21,10 +22,16 @@ export class MuseumSlideComponent implements OnInit, OnChanges {
     return false;
   }
 
-  constructor() {
+  constructor(private sharedService: SharedServiceService) {
+    sharedService.subject.next(10);
   }
 
   ngAfterViewChecked(){
+    let visiblePersons = this.PersonDirectory.length;
+    for (let person of this.PersonDirectory){
+      if (this.hasFilteredChip(person)) visiblePersons--;
+    }
+    this.sharedService.subject.next(visiblePersons);
   }
 
   ngOnChanges(changes) {
