@@ -1,3 +1,10 @@
 li{
   list-style-type:none;
 }
+.slide--presentation-component{
+    width: 1200px;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
