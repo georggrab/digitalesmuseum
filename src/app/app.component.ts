@@ -8,10 +8,12 @@ import { BackendService, Person } from './backend.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  public menuClicked : boolean = false;
   public person: Array<Person> = [];
   constructor(private backendService: BackendService){
     backendService.getPersons().subscribe((data) => {
       this.person = data;
     }, (err)=>{},()=>{});
   }
+  go(url){window.open(url,'_blank')}
 }

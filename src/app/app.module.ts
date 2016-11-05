@@ -11,6 +11,7 @@ import { GameComponent } from './game/game.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { BackendService } from './backend.service';
 import { ToUrlPipe } from './to-url.pipe';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ToUrlPipe } from './to-url.pipe';
     TrustPipe,
     GameComponent,
     NavigationComponent,
-    ToUrlPipe
+    ToUrlPipe,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

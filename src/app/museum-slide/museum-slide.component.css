@@ -1,6 +1,9 @@
 li{
   list-style-type:none;
 }
+ul{
+  margin-top:70px;
+}
 .slide--presentation-component{
     width: 1200px;
     position: relative;

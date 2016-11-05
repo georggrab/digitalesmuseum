@@ -1,0 +1,24 @@
+.btn--cms{
+	top:80px;
+	opacity:0.8;
+	background:#52528c !important;
+}
+#btn--menu{
+	opacity: 0.6;
+	z-index:20;
+}
+#btn--menu:hover{
+	opacity:1;
+}
+button {
+	position:fixed;
+	top: 15px;
+	left: 20px;
+	z-index: 10;
+	opacity:0;
+	transition: all 0.5s;
+	color:white;
+}
+button:hover{
+	opacity:1;
+}
