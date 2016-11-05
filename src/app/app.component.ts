@@ -15,5 +15,4 @@ export class AppComponent {
       this.person = data;
     }, (err)=>{},()=>{});
   }
-  go(url){window.open(url,'_blank')}
 }

@@ -14,4 +14,8 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
   }
 
+  go(url){
+    window.open(url,'_blank')
+  }
+
 }
