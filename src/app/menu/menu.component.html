@@ -1,9 +1,23 @@
 <button id="btn--menu" (click)="menuClicked=!menuClicked" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
   <i class="material-icons">view_headline</i>
 </button>
-<button id="btn--cms" (click)="go('http://google.com')" [class.btn--cms]="menuClicked" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+<button id="btn--cms" (click)="go('/cms')" [class.btn--cms]="menuClicked" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
   <i class="material-icons">add</i>
 </button>
+<div
+  [class.filter-chip--activated]="menuClicked"
+  class="filter-chip--container">
+<span *ngFor="let chip of Chips; let i=index;"
+  [style.top]="(i+2)*80 + 'px'"
+  [class.chip--filtered]="isFiltered(chip)"
+  (click)="toggleFilter(chip)"
+  class="mdl-chip">
+    <span class="mdl-chip__text">{{chip.text}}</span>
+</span>
+<span class="mdl-chip">
+  <span class="mdl-chip__text">total: {{visiblePersons}}</span>
+</span>
+</div>
 <div class="mdl-tooltip" data-mdl-for="btn--cms">
-edit information <br/>listed here
+  edit information <br/>listed here
 </div>

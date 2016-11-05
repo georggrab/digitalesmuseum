@@ -10,9 +10,15 @@ import { BackendService, Person } from './backend.service';
 export class AppComponent {
   public menuClicked : boolean = false;
   public person: Array<Person> = [];
+  public filters = [];
+
   constructor(private backendService: BackendService){
     backendService.getPersons().subscribe((data) => {
       this.person = data;
     }, (err)=>{},()=>{});
   }
+
+  filterChanged(ev){
+    this.filters = ev;
+};
 }

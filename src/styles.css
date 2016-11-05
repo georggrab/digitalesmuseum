@@ -20,6 +20,10 @@ html body{
 }
 html {
   background: initial;
+
+}
+* {
+font-family: 'Cutive Mono', monospace;
 }
 
 @font-face {

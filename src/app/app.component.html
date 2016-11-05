@@ -1,13 +1,8 @@
 
-<app-menu [PersonDirectory]="person"></app-menu>
+<app-menu (filterChanged)="filterChanged($event)" [PersonDirectory]="person"></app-menu>
 <main>
 	<header>
 		<p>DIGITALES MUSEUM</p>
 	</header>
-	<!--<nav>
-		<section>filter tags:</section>
-		<section>search</section>
-		<section>goto person</section>
-	</nav>-->
-	<app-museum-slide [PersonDirectory]="person"></app-museum-slide>
+	<app-museum-slide [Filters]="filters" [PersonDirectory]="person"></app-museum-slide>
 </main>

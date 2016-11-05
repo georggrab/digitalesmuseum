@@ -1,34 +1,34 @@
-main header{
-    background: #171a1d url(/assets/bgframes.png) repeat 50% 50% !important;
-    color: white;
-    -webkit-animation: scr 5s linear infinite;
-    animation: scr 5s linear infinite;
-    font-family: Monoton;
-    position: fixed;
-    margin: auto;
-    z-index: 5;
-    width: 100%;
-    background: inherit;
-		top:0;
+main header {
+  background: #171a1d url(/assets/bgframes.png) repeat 50% 50% !important;
+  color: white;
+  -webkit-animation: scr 5s linear infinite;
+  animation: scr 5s linear infinite;
+  font-family: Monoton;
+  position: fixed;
+  margin: auto;
+  z-index: 5;
+  width: 100%;
+  background: inherit;
+  top: 0;
 }
 
 main header p {
-    width: 1200px;
-    position: relative;
-    left: 0;
-    right: 0;
-    margin: auto;
-    padding: 20px 0 10px 40px;
+  width: 1200px;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 20px 0 10px 40px;
+  font-family: 'Monoton', 'Cutive Mono', monospace;
 }
 
 header p {
-	font-size: 35px;
-	line-height: 35px;
+  font-size: 35px;
+  line-height: 35px;
 }
 
-app-museum-slide{
-}
+app-museum-slide {}
 
-main{
-	color:white;
+main {
+  color: white;
 }

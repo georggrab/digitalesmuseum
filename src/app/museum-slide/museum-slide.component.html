@@ -2,6 +2,7 @@
     <li class="slide--presentation-component"
     *ngFor="let person of PersonDirectory; let i=index">
      <app-slide-presentation
+     [hidden]="hasFilteredChip(person)"
      [PersonInputStream]="person"></app-slide-presentation>
    </li>
 </ul>

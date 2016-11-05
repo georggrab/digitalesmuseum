@@ -3,6 +3,41 @@
 	opacity:0.8;
 	background:#52528c !important;
 }
+.filter-chip--container{
+    width: 240px;
+    position: fixed;
+    z-index: 5;
+		opacity:0;
+    top: 150px;
+    left: 20px;
+    border: 1px solid;
+    padding: 5px;
+		top:0;
+    border-radius: 20px;
+		transition: all 0.5s;
+}
+.filter-chip--container span {
+	color:white;
+	background: #543737;
+	cursor:pointer;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none; 
+-o-user-select: none;
+user-select: none;
+}
+.filter-chip--container span:nth-child(odd) {
+	margin-left:10px;
+
+}
+.filter-chip--activated{
+	opacity:1;
+	top:150px;
+	backdrop-filter: blur(6px);
+}
+.chip--filtered{
+	opacity:0.5;
+}
 #btn--menu{
 	opacity: 0.6;
 	z-index:20;
