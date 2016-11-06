@@ -4,6 +4,17 @@ section h1 {
   margin: 0;
 }
 
+.person--shorttext{
+  color:rgba(177, 177, 177, 0.81);
+}
+
+.person--dates{
+    margin: 0;
+    position: relative;
+    top: -10px;
+    font-size: 2em;
+}
+
 section h2 {
   font-family: 'Cutive Mono', monospace;
   font-style: italic;
