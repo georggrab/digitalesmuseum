@@ -8,7 +8,6 @@ import { MuseumSlideComponent } from './museum-slide/museum-slide.component';
 import { SlidePresentationComponent } from './slide-presentation/slide-presentation.component';
 import { TrustPipe } from './trust.pipe';
 import { GameComponent } from './game/game.component';
-import { NavigationComponent } from './navigation/navigation.component';
 import { BackendService } from './backend.service';
 import { SharedServiceService } from './shared-service.service';
 import { ToUrlPipe } from './to-url.pipe';
@@ -21,7 +20,6 @@ import { MenuComponent } from './menu/menu.component';
     SlidePresentationComponent,
     TrustPipe,
     GameComponent,
-    NavigationComponent,
     ToUrlPipe,
     MenuComponent
   ],

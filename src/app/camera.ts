@@ -76,7 +76,6 @@ export class Camera {
 
     for ( let s = ray.length -1; s >= 0; s--){
       let step = ray[s];
-      if (this.cls<100){console.dir(gameData);}
       this.cls++;
 
       if (s === hit){

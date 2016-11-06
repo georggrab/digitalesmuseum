@@ -44,7 +44,7 @@
     </header>
   </div>
 
-  <app-game *ngIf="GameStarted === true"></app-game>
+  <app-game [RawGameDisplayData]="PersonInputStream" *ngIf="GameStarted === true"></app-game>
   <main>
       <!--<div *ngFor="let slide of PersonInputStream.dataTiles" class="mdl-card slide--datatile mdl-shadow--2dp">
         <div class="mdl-card__title mdl-card--expand">

@@ -10,7 +10,7 @@ export class GameLoop {
 
   start(callback){
     this.callback = callback;
-    requestAnimationFrame(this.frame);
+    return requestAnimationFrame(this.frame);
   }
 
   frame(time: number){

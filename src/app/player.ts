@@ -6,7 +6,7 @@ export class Player {
   public weapon: Bitmap;
   public paces: number = 0;
   constructor(public x: number, public y: number, public direction: number){
-    this.weapon = new Bitmap('assets/knife_hand.png', 319, 320);
+    this.weapon = new Bitmap('assets/knife_hand2.png', 600, 723);
   }
 
   rotate(angle : number){

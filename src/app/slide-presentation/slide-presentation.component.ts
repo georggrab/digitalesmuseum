@@ -25,8 +25,11 @@ export class SlidePresentationComponent implements OnInit, OnChanges {
 
   ngOnChanges(change){
     if (this.PersonInputStream.dataTiles && this.PersonInputStream.dataTiles.length > 1){
-      console.log(this.PersonInputStream.dataTiles[1].long_text);
-      this.Sources = JSON.parse(this.PersonInputStream.dataTiles[1].long_text);
+      try {
+        this.Sources = JSON.parse(this.PersonInputStream.dataTiles[1].long_text);
+      } catch (err) {
+        console.warn(err);
+      }
     }
 
   }
