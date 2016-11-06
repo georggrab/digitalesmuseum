@@ -5,11 +5,12 @@ Dieses README dient zur allgemeinen Beschreibung der Projektfunktionalität.
 
 Notiz: Der Code ist auf Github gehostet und da wahrscheinlich komfortabler einzusehen.
 Die relevanten Repositories sind
-| Repository | Zweck
-| --- | ---
-| [digitalesmuseum-front](https://github.com/talkdirty/digitalesmuseum) | Hauptseite
-| [digitalesmuseum-cms](https://github.com/danielsimon1/digitalesmuseum-cms) | Daten hinzufügen
-| [digitalesmuseum-backend](https://github.com/talkdirty/digitalesmuseum-backend) | REST Backend
+
+ Repository | Zweck 
+ --- | --- 
+[digitalesmuseum-front](https://github.com/talkdirty/digitalesmuseum) | Hauptseite 
+[digitalesmuseum-cms](https://github.com/danielsimon1/digitalesmuseum-cms) | Daten hinzufügen 
+[digitalesmuseum-backend](https://github.com/talkdirty/digitalesmuseum-backend) | REST Backend 
 
 ## Vorliegende Struktur
 
