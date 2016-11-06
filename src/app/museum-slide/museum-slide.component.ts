@@ -12,19 +12,18 @@ export class MuseumSlideComponent implements OnInit, OnChanges {
   @Input() Filters;
 
   hasFilteredChip(person) {
+    let filteredPosessions = [];
     for (let pchip of person.chips) {
       for (let fchip of this.Filters) {
         if (fchip.text === pchip.text && fchip.letter === pchip.letter) {
-          return true;
+          filteredPosessions.push(fchip);
         }
       }
     }
-    return false;
+    return filteredPosessions.length === person.chips.length;
   }
 
-  constructor(private sharedService: SharedServiceService) {
-    sharedService.subject.next(10);
-  }
+  constructor(private sharedService: SharedServiceService) { }
 
   ngAfterViewChecked(){
     let visiblePersons = this.PersonDirectory.length;
